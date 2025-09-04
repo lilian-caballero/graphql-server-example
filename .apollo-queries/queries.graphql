@@ -1,0 +1,29 @@
+query GetBook($id: ID!) {
+  book(id: $id){
+    title,
+    characters {
+      name
+    }
+  }
+}
+
+query GetAuthor($id: ID!) {
+  author(id: $id){
+    name,
+    books {
+      title,
+      characters {
+        name
+      }
+    }
+  }
+}
+
+query GetCharacter($id: ID!) {
+  character(id: $id) {
+    name,
+    books {
+      title
+    }
+  }
+}
