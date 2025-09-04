@@ -2,12 +2,13 @@ const { gql } = require('apollo-server-express');
 
 module.exports = gql`
   type Author {
-    id: Int!,
+    id: ID!,
     name: String!,
-    books: [Book!]
+    books: [Book]
   }
 
   extend type Query {
-    authors: [Author]
+    authors: [Author],
+    author(id: ID!): Author
   }
 `;

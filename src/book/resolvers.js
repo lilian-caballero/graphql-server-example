@@ -1,11 +1,11 @@
-const books = require('./_db');
-const authors = require('../author/_db');
+const db = require('../_db');
 
 module.exports = {
     Query: {
-        books: () => books
+        books: () => db.books,
+        book: (_, { id }) => db.books.find((book) => id == book.id)
     },
     Book: {
-        author: (book) => authors.find((_) => _.id == book.authorId)
+        author: (book) => db.authors.find((author) => author.id == book.authorId)
     }
 };
