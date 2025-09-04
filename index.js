@@ -4,8 +4,10 @@ const { gql } = require('apollo-server-express');
 const { mergeTypeDefs, mergeResolvers } = require('@graphql-tools/merge');
 const authorTypes = require('./src/author/types');
 const bookTypes = require('./src/book/types');
+const characterTypes = require('./src/character/types');
 const authorResolvers = require('./src/author/resolvers');
 const bookResolvers = require('./src/book/resolvers');
+const characterResolvers = require('./src/character/resolvers');
 
 const rootType = gql`
     type Query
@@ -13,11 +15,13 @@ const rootType = gql`
 const typeDefs = mergeTypeDefs([
     rootType,
     authorTypes,
-    bookTypes
+    bookTypes,
+    characterTypes
 ]);
 const resolvers = mergeResolvers([
     authorResolvers,
-    bookResolvers
+    bookResolvers,
+    characterResolvers
 ]);
 
 async function startServer() {

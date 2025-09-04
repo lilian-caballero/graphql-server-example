@@ -6,6 +6,7 @@ module.exports = {
         book: (_, { id }) => db.books.find((book) => id == book.id)
     },
     Book: {
-        author: (book) => db.authors.find((author) => author.id == book.authorId)
+        author: (book) => db.authors.find((author) => author.id == book.authorId),
+        characters: (book) => db.characters.filter((character) => character.bookIds.includes(book.id)),
     }
 };

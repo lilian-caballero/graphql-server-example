@@ -5,11 +5,12 @@ module.exports = gql`
     id: ID!,
     title: String!,
     numberOfPages: Int,
-    author: Author!
+    author: Author!,
+    characters: [Character]
   }
 
   extend type Query {
     books: [Book],
-    book(id: ID!): Book
+    book(id: ID!): Book,
   }
 `;
