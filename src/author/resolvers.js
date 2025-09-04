@@ -1,8 +1,9 @@
+const authors = require('./_db');
 const books = require('../book/_db');
 
 module.exports = {
     Query: {
-        authors: (_, __, { dataSources }) => dataSources.authors
+        authors: () => authors
     },
     Author: {
         books: (author) => books.filter((_) => _.authorId == author.id)

@@ -10,16 +10,15 @@ const bookResolvers = require('./src/book/resolvers');
 const rootType = gql`
     type Query
 `;
-const typeDefs = mergeTypeDefs(
+const typeDefs = mergeTypeDefs([
     rootType,
     authorTypes,
     bookTypes
-);
-
-const resolvers = mergeResolvers(
+]);
+const resolvers = mergeResolvers([
     authorResolvers,
     bookResolvers
-);
+]);
 
 async function startServer() {
     const server = new ApolloServer({
