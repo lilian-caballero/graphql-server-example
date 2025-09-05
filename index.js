@@ -10,7 +10,8 @@ const bookResolvers = require('./src/book/resolvers');
 const characterResolvers = require('./src/character/resolvers');
 
 const rootType = gql`
-    type Query
+    type Query,
+    type Mutation
 `;
 const typeDefs = mergeTypeDefs([
     rootType,
