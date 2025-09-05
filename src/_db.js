@@ -1,12 +1,6 @@
 module.exports = {
   "books": [
     {
-      "id": 3,
-      "title": "The Hunger Games",
-      "numberOfPages": 352,
-      "authorId": 2
-    },
-    {
       "id": 4,
       "title": "The Hunger Games - Catching Fire",
       "numberOfPages": 499,
@@ -17,6 +11,12 @@ module.exports = {
       "title": "The Hunger Games - Mockingjay",
       "numberOfPages": 409,
       "authorId": 2
+    },
+    {
+      "id": 6631,
+      "title": "Sunrise on the Reaping",
+      "authorId": "2",
+      "numberOfPages": 448
     }
   ],
   "characters": [

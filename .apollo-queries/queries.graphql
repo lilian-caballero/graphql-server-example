@@ -1,8 +1,12 @@
-query GetBook($id: ID!) {
-  book(id: $id){
-    title,
-    characters {
-      name
+# Authors
+query GetAuthors {
+  authors{
+    name,
+    books {
+      title,
+      characters {
+        name
+      }
     }
   }
 }
@@ -19,10 +23,58 @@ query GetAuthor($id: ID!) {
   }
 }
 
+mutation AddAuthor($input: AddAuthorInput!){
+  addAuthor(input: $input) {
+    id,
+    name
+  }
+}
+
+mutation EditAuthor($id: ID!, $input: EditAuthorInput!){
+  editAuthor(id: $id, input: $input) {
+    id, 
+    name,
+  }
+}
+
 mutation DeleteAuthor($id: ID!) {
   deleteAuthor(id: $id) {
     id,
     name
+  }
+}
+
+# Books
+query GetBooks {
+  books{
+    title,
+    characters {
+      name
+    }
+  }
+}
+
+query GetBook($id: ID!) {
+  book(id: $id){
+    title,
+    characters {
+      name
+    }
+  }
+}
+
+mutation AddBook($input: AddBookInput!){
+  addBook(input: $input) {
+    id,
+    title
+  }
+}
+
+mutation EditBook($id: ID!, $input: EditBookInput!){
+  editBook(id: $id, input: $input) {
+    id, 
+    title,
+    numberOfPages
   }
 }
 
@@ -70,5 +122,18 @@ mutation DeleteCharacter($id: ID!) {
   deleteCharacter(id: $id) {
     id,
     name
+  }
+}
+
+# Query final de teste
+query Query{
+  authors {
+    name
+  },
+  books {
+    title,
+    characters {
+      age
+    }
   }
 }

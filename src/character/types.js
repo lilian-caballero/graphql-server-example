@@ -14,9 +14,9 @@ module.exports = gql`
   }
 
   extend type Mutation {
-    deleteCharacter(id: ID!): [Character]
     addCharacter(input: AddCharacterInput!): Character,
-    updateCharacter(id: ID!, input: EditCharacterInput!): Character
+    editCharacter(id: ID!, input: EditCharacterInput!): Character,
+    deleteCharacter(id: ID!): [Character]
   }
 
   input AddCharacterInput {
