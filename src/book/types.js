@@ -13,4 +13,8 @@ module.exports = gql`
     books: [Book],
     book(id: ID!): Book,
   }
+
+  extend type Mutation {
+    deleteBook(id: ID!): [Book]
+  }
 `;

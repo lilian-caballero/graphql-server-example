@@ -27,3 +27,17 @@ query GetCharacter($id: ID!) {
     }
   }
 }
+
+mutation DeleteAuthor($id: ID!) {
+  deleteAuthor(id: $id) {
+    id,
+    name
+  }
+}
+
+mutation DeleteBook($id: ID!) {
+  deleteBook(id: $id) {
+    id,
+    title
+  }
+}

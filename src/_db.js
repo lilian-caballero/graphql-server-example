@@ -1,18 +1,6 @@
 module.exports = {
   "books": [
     {
-      "id": 1,
-      "title": "The Awakening",
-      "numberOfPages": 100,
-      "authorId": 1
-    },
-    {
-      "id": 2,
-      "title": "City of Glass",
-      "numberOfPages": 500,
-      "authorId": 1
-    },
-    {
       "id": 3,
       "title": "The Hunger Games",
       "numberOfPages": 352,

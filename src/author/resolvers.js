@@ -12,12 +12,12 @@ module.exports = {
     Mutation: {
         deleteAuthor: (_, { id }) => {
             let authors = db.authors.filter((author) => author.id != id);
-            let path = __dirname.replace('author', '');
+            let path = __dirname.replace('author', '/_db.js');
 
             db.authors = authors;
 
             fs.writeFileSync(
-                path + '/_db.js',
+                path,
                 `module.exports = ${JSON.stringify(db, null, 2)};`,
                 'utf-8'
             );
