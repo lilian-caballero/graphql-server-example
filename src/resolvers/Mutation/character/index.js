@@ -1,14 +1,7 @@
-const db = require('../_db');
+const db = require('../../../core/db/_db');
 const fs = require('fs');
 
 module.exports = {
-    Query: {
-        characters: () => db.characters,
-        character: (_, { id }) => db.characters.find((character) => id == character.id)
-    },
-    Character: {
-        books: (character) => db.books.filter((book) => character.bookIds.includes(book.id))
-    },
     Mutation: {
         addCharacter: (_, addCharacterInput) => {
             let character = {

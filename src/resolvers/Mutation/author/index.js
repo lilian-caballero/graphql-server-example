@@ -1,14 +1,7 @@
-const db = require('../_db');
+const db = require('../../../core/db/_db');
 const fs = require('fs');
 
 module.exports = {
-    Query: {
-        authors: () => db.authors,
-        author: (_, { id }) => db.authors.find((author) => id == author.id)
-    },
-    Author: {
-        books: (author) => db.books.filter((book) => book.authorId == author.id)
-    },
     Mutation: {
         addAuthor: (_, addAuthorInput) => {
             let author = {
